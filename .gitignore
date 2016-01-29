@@ -26,3 +26,5 @@ cache.properties
 /.php_cs.cache
 /deployment.properties
 /auth.json
+composer.lock
+/bin/kharon.phar
