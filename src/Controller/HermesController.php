@@ -12,6 +12,6 @@ class HermesController extends BaseController
      */
     public function getPath()
     {
-        return '/hermes';
+        return '/hermes/collect';
     }
 }

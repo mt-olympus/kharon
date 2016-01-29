@@ -12,6 +12,6 @@ class ArtemisController extends BaseController
      */
     public function getPath()
     {
-        return '/artemis';
+        return '/artemis/collect';
     }
 }
