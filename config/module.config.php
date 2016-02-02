@@ -4,6 +4,7 @@ return array(
         'invokables' => array(
             'Kharon\Controller\Hermes' => 'Kharon\Controller\HermesController',
             'Kharon\Controller\Artemis' => 'Kharon\Controller\ArtemisController',
+            'Kharon\Controller\Lachesis' => 'Kharon\Controller\LachesisController',
         ),
     ),
 
@@ -42,6 +43,15 @@ return array(
                         'route'    => 'artemis <directory> <zeus> [--quiet|-q] [--verbose|-v]',
                         'defaults' => array(
                             'controller' => 'Kharon\Controller\Artemis',
+                            'action'     => 'index',
+                        ),
+                    ),
+                ),
+                'lachesis' => array(
+                    'options' => array(
+                        'route'    => 'lachesis <directory> <zeus> [--quiet|-q] [--verbose|-v]',
+                        'defaults' => array(
+                            'controller' => 'Kharon\Controller\Lachesis',
                             'action'     => 'index',
                         ),
                     ),
