@@ -37,6 +37,7 @@ abstract class BaseController extends AbstractActionController
 
         $hermes = new Client($client);
         $hermes->addRequestId('zeus');
+        $hermes->setAppendPath(true);
         try {
             $hermes->post($this->getPath(), $data);
         } catch (\Exception $ex) {

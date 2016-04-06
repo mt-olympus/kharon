@@ -18,6 +18,7 @@ $phar = new \Phar($pharPath, 0, $filename);
 $phar->startBuffering();
 
 $phar->addFromString('kharon.php', substr(php_strip_whitespace("$srcRoot/kharon.php"), 19));
+$phar->addFromString('Module.php', php_strip_whitespace("$srcRoot/Module.php"));
 
 addDir($phar, "$srcRoot/vendor", $srcRoot);
 addDir($phar, "$srcRoot/config", $srcRoot);
