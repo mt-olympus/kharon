@@ -5,6 +5,7 @@ return array(
             'Kharon\Controller\Hermes' => 'Kharon\Controller\HermesController',
             'Kharon\Controller\Artemis' => 'Kharon\Controller\ArtemisController',
             'Kharon\Controller\Lachesis' => 'Kharon\Controller\LachesisController',
+            'Kharon\Controller\All' => 'Kharon\Controller\AllController',
         ),
     ),
 
@@ -26,6 +27,15 @@ return array(
                         'defaults' => array(
                             'controller' => 'Kharon\Controller\Index',
                             'action'     => 'version',
+                        ),
+                    ),
+                ),
+                'all' => array(
+                    'options' => array(
+                        'route'    => 'all <directory> <zeus> [--quiet|-q] [--verbose|-v]',
+                        'defaults' => array(
+                            'controller' => 'Kharon\Controller\All',
+                            'action'     => 'index',
                         ),
                     ),
                 ),
