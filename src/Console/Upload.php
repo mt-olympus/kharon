@@ -27,7 +27,6 @@ class Upload
 
         $opts = $route->getMatches();
         $verbose = $opts['verbose'] || $opts['v'];
-        //$quiet = $opts['quiet'] || $opts['q'];
 
         if (!file_exists($path)) {
             $console->writeLine("Path $path not found.", ColorInterface::RED);
@@ -38,10 +37,17 @@ class Upload
 
         foreach (glob($path.'/*.kharon') as $filename) {
             if ($verbose) {
-                $console->writeLine("Sending $filename ...", ColorInterface::BLUE);
+                $console->write("Sending $filename ... ");
             }
             $data = file_get_contents($filename);
-            $this->send($data, sprintf('/v1/%s/collect', $type));
+            $success = $this->send($data, sprintf('/v1/%s/collect', $type));
+            if ($verbose) {
+                if ($success) {
+                    $console->writeLine("OK", ColorInterface::GREEN);
+                } else {
+                    $console->writeLine("FAILED", ColorInterface::RED);
+                }
+            }
             unlink($filename);
         }
         if ($verbose) {

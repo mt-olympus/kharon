@@ -21,8 +21,6 @@ return [
         ],
     ],
     'dependencies' => [
-        'invokables' => [
-        ],
         'factories' => [
             Kharon\Console\Upload::class => Kharon\Console\Factory\UploadFactory::class,
         ],
@@ -31,7 +29,7 @@ return [
     'console' => [
         'routes' => [
             [
-                'name' => 'upload [hermes|artemis|lachesis] <path> <zeus> [--quiet|--q] [--verbose|-v]',
+                'name' => 'upload [hermes|artemis|lachesis] <path> <zeus> [--verbose|-v]',
                 'handler' => Kharon\Console\Upload::class,
             ]
         ],
