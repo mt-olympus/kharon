@@ -33,13 +33,13 @@ class Upload
             return;
         }
 
-        $this->apiClient->getZendClient()->setUri($zeusUrl);
 
         foreach (glob($path.'/*.kharon') as $filename) {
             if ($verbose) {
                 $console->write("Sending $filename ... ");
             }
             $data = file_get_contents($filename);
+            $this->apiClient->getZendClient()->setUri($zeusUrl);
             $success = $this->send($data, sprintf('/v1/%s/collect', $type));
             if ($verbose) {
                 if ($success) {

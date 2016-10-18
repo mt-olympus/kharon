@@ -13,7 +13,7 @@ class UploadFactory implements FactoryInterface
     public function __invoke(ContainerInterface $container, $requestedName, array $options = null)
     {
         $hermes = (new ClientFactory())->__invoke($container, Client::class);
-        $hermes->setAppendPath(false);
+        $hermes->setAppendPath(true);
         $hermes->addRequestId('kharon');
 
         $request = new Request();
